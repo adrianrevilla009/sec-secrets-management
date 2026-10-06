@@ -1,0 +1,12 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: orders-db
+  namespace: orders
+spec:
+  encryptedData:
+    password: AgBy3i4OJSWK+PiTySYZZA9rO43cGDEQAx...replace-with-kubeseal-output
+  template:
+    metadata:
+      name: orders-db
+      namespace: orders

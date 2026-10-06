@@ -1,0 +1,14 @@
+services:
+  vault:
+    image: hashicorp/vault:1.17.2
+    command: server -dev -dev-root-token-id=dev-only-token
+    environment:
+      VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
+    cap_add: [IPC_LOCK]
+    ports: ["8200:8200"]
+  postgres:
+    image: postgres:16.3
+    environment:
+      POSTGRES_PASSWORD: admin-pass-for-local-only
+      POSTGRES_DB: orders
+    ports: ["5432:5432"]

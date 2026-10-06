@@ -1,0 +1,6 @@
+services:
+  localstack:
+    image: localstack/localstack:3.6.0
+    environment:
+      SERVICES: secretsmanager
+    ports: ["4566:4566"]
